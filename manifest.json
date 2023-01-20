@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Kyrgyzstan Spelling",
+  "description": "Это расширение призвано научить пользователей из России и тех, кто не знаком с Кыргызстаном - правильному написанию названия страны. Оно помогает снять напряжение среди кыргызстанской аудитории на русскоязычные тексты с написанием 'Киргизия, Киргизстан'",
+  "version": "1.0.47",
+  "icons": {
+    "128": "icon.png",
+    "48": "icon.png",
+    "32": "icon.png",
+    "16": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["<all_urls>"],
+      "js": ["Content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "action": {
+    "default_icon": "icon.png",
+    "default_title": "Kyrgyzstan Spelling",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["management", "storage"],
+  "background": {
+    "service_worker": "popupLogic.js"
+  }
+}
